@@ -1,0 +1,34 @@
+h2 {
+  font-size: 24px;
+  line-height: 28px;
+  color: #050510;
+}
+.navigation {
+  padding: 6px 16px;
+}
+.input_group {
+  display: block;
+  position: relative;
+}
+.input_search {
+  width: 100%;
+  min-height: 40px;
+  display: block;
+  background: #f7f7f8;
+  border-radius: 16px;
+  border: none;
+  padding-left: 44px;
+}
+.input_search::placeholder {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #c3c3c6;
+}
+.search_icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 14px;
+  z-index: 1;
+}
