@@ -1,0 +1,39 @@
+.radio_switcher {
+  width: 341px;
+  padding: 19px 16px 21px 27px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #050510;
+}
+
+.radio_switcher input[type="radio"] {
+  display: none;
+}
+
+.radio_switcher label {
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 0;
+  user-select: none;
+}
+
+.radio_switcher label:before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 31%;
+  left: -10px;
+  bottom: 1px;
+  border-radius: 50%;
+  border: 2px solid #6534ff;
+  transition: all 0.2s ease-in-out;
+}
+
+.radio_switcher input[type="radio"]:checked + label:before {
+  border: 7px solid #6534ff;
+}

@@ -1,0 +1,53 @@
+.modal {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(5, 5, 16, 0.16);
+  z-index: 1;
+  margin-top: -2px;
+}
+.modal_content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 373px;
+  height: 192px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+.checkbox_group {
+  display: flex;
+  flex-direction: column;
+}
+.close_modal {
+  position: absolute;
+  right: 0;
+  width: 49px;
+  height: 24px;
+  padding-right: 21px;
+  cursor: pointer;
+}
+.modal_top_block {
+  padding-top: 24px;
+  margin-bottom: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sorting {
+  display: inline;
+  margin: 0 auto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #050510;
+}

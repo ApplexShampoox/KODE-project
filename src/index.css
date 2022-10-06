@@ -20,9 +20,15 @@
   font-weight: 600;
   src: url("./fonts/Inter-SemiBold.ttf") format("truetype");
 }
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 body {
-  margin: 0;
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
