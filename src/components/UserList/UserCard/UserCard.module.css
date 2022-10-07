@@ -1,0 +1,62 @@
+.user_card_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.user_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 2px;
+}
+.user_photo {
+  box-sizing: content-box;
+  padding: 4px 16px 6px 0;
+}
+.user_header {
+  display: flex;
+  flex-direction: row;
+  padding-top: 7px;
+  align-items: baseline;
+  padding: 3px 0;
+}
+.user_info {
+  display: flex;
+  flex-direction: column;
+}
+.user_name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #050510;
+
+  margin-right: 4px;
+}
+.user_nickname {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: #97979b;
+}
+.user_specialty {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #55555c;
+
+  padding-bottom: 7px;
+}
+.user_birthday {
+  padding-bottom: 10px;
+  padding-right: 5px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: right;
+  color: #55555c;
+}

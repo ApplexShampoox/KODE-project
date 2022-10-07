@@ -1,0 +1,27 @@
+.sorting_tabs {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.sorting_tabs::-webkit-scrollbar {
+  display: none;
+}
+.sorting_tabs__el {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 7px 12px;
+  gap: 6px;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #97979b;
+}
+.active {
+  border-bottom: 2px solid #6534ff;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: #050510;
+}
