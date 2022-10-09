@@ -1,0 +1,46 @@
+.skeleton_card_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.skeleton_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 6px;
+}
+.skeleton_photo {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(90deg, #f3f3f6 0%, #fafafa 100%);
+  border-radius: 50px;
+  margin-right: 16px;
+}
+.skeleton_header {
+  display: flex;
+  flex-direction: row;
+  padding-top: 7px;
+  align-items: baseline;
+  padding: 0 0 6px 0;
+}
+.skeleton_info {
+  display: flex;
+  flex-direction: column;
+}
+.skeleton_name {
+  width: 144px;
+  height: 16px;
+  background: linear-gradient(90deg, #f3f3f6 0%, #fafafa 100%);
+  border-radius: 50px;
+  margin-right: 4px;
+}
+
+.skeleton_specialty {
+  width: 80px;
+  height: 12px;
+  background: linear-gradient(90deg, #f3f3f6 0%, #fafafa 100%);
+  border-radius: 50px;
+  padding-bottom: 7px;
+}

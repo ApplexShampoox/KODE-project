@@ -1,0 +1,42 @@
+.failure_screen_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  margin: auto;
+}
+.failure_screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.failure_screen_img {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 8px;
+}
+.failure_screen_description {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+  color: #050510;
+  margin-bottom: 12px;
+}
+.failure_screen_advice {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #97979b;
+  margin-bottom: 12px;
+}
+.failure_screen_link {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #6534ff;
+  text-decoration: none;
+}

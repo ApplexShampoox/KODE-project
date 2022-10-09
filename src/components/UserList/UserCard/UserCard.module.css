@@ -8,11 +8,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 2px;
+}
+.user_photo_wrapper {
+  padding: 4px 16px 5px 0;
 }
 .user_photo {
+  border-radius: 50%;
   box-sizing: content-box;
-  padding: 4px 16px 6px 0;
 }
 .user_header {
   display: flex;
