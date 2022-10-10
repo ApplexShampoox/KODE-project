@@ -9,7 +9,6 @@ const NetworkError = () => {
       description='Какой-то сверхразум все сломал'
       advice='Постараемся быстро починить'
       error={true} />
-
   );
 }
 

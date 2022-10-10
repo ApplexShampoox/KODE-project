@@ -1,4 +1,3 @@
-
 import FailureScreen from "./FailureScreen";
 import SearchErrorImg from '../../images/magnifier.png';
 

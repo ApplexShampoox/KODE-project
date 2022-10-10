@@ -6,8 +6,10 @@ import { ReactComponent as CloseModal } from '../../images/close_modal.svg';
 
 const Modal = (props) => {
   const [favorite, setFavorite] = useState("По алфавиту");
+
   function handleChange(e) {
     setFavorite(e.target.id);
+    props.onClose();
   }
   if (!props.show) {
     return null

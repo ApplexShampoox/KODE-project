@@ -5,7 +5,7 @@ const UserCard = ({ src, name, nickname, specialty, birthday }) => {
     <div className={style.user_card_wrapper} >
       <div className={style.user_card}>
         <div className={style.user_photo_wrapper}>
-          <img src={src} alt="user" width="72" height="72" className={style.user_photo} />
+          <img src={src + '&rnd=' + Math.floor(Math.random() * 20000)} alt="user" width="72" height="72" className={style.user_photo} />
         </div>
 
         <div className={style.user_info}>

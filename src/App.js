@@ -1,43 +1,27 @@
-import { useState } from "react";
-import Container from "./components/Container/Container";
-import Modal from "./components/Modal/Modal";
-import Navigation from "./components/Navigation/Navigation";
-import Tabs from "./components/Tabs/Tabs";
-import UserList from "./components/UserList/UserList";
-import NetworkError from "./components/FailureScreen/NetworkError";
-import SearchError from "./components/FailureScreen/SearchError";
-import UserDetails from "./components/UserDetails/UserDetails";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import Departments from "./components/Tabs/Departments";
 
 function App() {
-  const [show, setShow] = useState(false);
-  const style = {
-    maxWidth: '1280px',
-    margin: '0 auto 13px',
-    backgroundColor: '#C3C3C6',
-  };
-
   return (
     <>
-
-      <UserDetails />
-
-
-
-      {/* <Container >
-        <Navigation onOpen={() => setShow(true)} />
-        <Modal onClose={() => setShow(false)} show={show} />
-        <Tabs />
-      </Container >
-      <hr style={style} /> */}
-
-      {/* <Container >
-        <UserList />
-      </Container> */}
-
-
-      {/* <NetworkError /> */}
-      {/* <SearchError /> */}
-
+      <Routes>
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Departments id={'all'} />} />
+          <Route path="designers" element={<Departments id={'design'} />} />
+          <Route path="analysts" element={<Departments id={'analytics'} />} />
+          <Route path="managers" element={<Departments id={'management'} />} />
+          <Route path="ios" element={<Departments id={'ios'} />} />
+          <Route path="android" element={<Departments id={'android'} />} />
+          <Route path="backend" element={<Departments id={'backend'} />} />
+          <Route path="frontend" element={<Departments id={'frontend'} />} />
+          <Route path="backoffice" element={<Departments id={'back_office'} />} />
+          <Route path="pr" element={<Departments id={'pr'} />} />
+          <Route path="hr" element={<Departments id={'hr'} />} />
+          <Route path="qa" element={<Departments id={'qa'} />} />
+          <Route path="support" element={<Departments id={'support'} />} />
+        </Route>
+      </Routes>
     </>
   );
 }

@@ -2,21 +2,28 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import UserCard from "./UserCard/UserCard";
 import SkeletonCard from "./SkeletonCard/SkeletonCard";
+import NetworkError from "./../FailureScreen/NetworkError";
 
-const src = "https://stoplight.io/mocks/kode-frontend-team/koder-stoplight/86566464/users?__example=all";
-
-const UserList = () => {
-
-  const [list, setList] = useState([])
-  const [loading, setLoading] = useState(true)
-
+const UserList = ({ src }) => {
+  const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   useEffect(() => {
-
+    setLoading(true);
     axios
       .get(src)
-      .then(data => setList(data.data.items))
-      .then(setLoading(false))
-  }, []);
+      .then(data => {
+        setList(data.data.items);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(true);
+      })
+  }, [src]);
+
+  if (error) {
+    return <NetworkError />
+  };
 
   if (loading) {
     return (
@@ -26,14 +33,9 @@ const UserList = () => {
         <SkeletonCard />
         <SkeletonCard />
         <SkeletonCard />
-        <SkeletonCard />
-        <SkeletonCard />
-        <SkeletonCard />
-        <SkeletonCard />
-        <SkeletonCard />
       </>
     )
-  }
+  };
 
   return (<>
     {
