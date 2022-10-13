@@ -1,0 +1,25 @@
+.current_year {
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #c3c3c6;
+  padding: 0 15px;
+}
+.current_year:before,
+.current_year:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 2px solid #c3c3c6;
+  margin: auto;
+}
+
+.sortBtn {
+  cursor: pointer;
+  padding: 0 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: #fff;
+}

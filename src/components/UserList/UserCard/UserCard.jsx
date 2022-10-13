@@ -1,8 +1,16 @@
+import { Link } from "react-router-dom"
 
 import style from './UserCard.module.css'
-const UserCard = ({ src, name, nickname, specialty, birthday }) => {
+const UserCard = ({ src, name, nickname, specialty, birthday, phone, fullBirthday }) => {
+  localStorage.setItem('avatarUrl', src);
+  localStorage.setItem('name', name);
+  localStorage.setItem('userTag', nickname);
+  localStorage.setItem('position', specialty);
+  localStorage.setItem('birthday', fullBirthday);
+  localStorage.setItem('phone', phone);
+
   return (
-    <div className={style.user_card_wrapper} >
+    <Link to={"../" + name} relative="path" className={style.user_card_wrapper} >
       <div className={style.user_card}>
         <div className={style.user_photo_wrapper}>
           <img src={src + '&rnd=' + Math.floor(Math.random() * 20000)} alt="user" width="72" height="72" className={style.user_photo} />
@@ -17,7 +25,8 @@ const UserCard = ({ src, name, nickname, specialty, birthday }) => {
         </div>
       </div>
       <span className={style.user_birthday}>{birthday}</span>
-    </div>
+    </Link>
+
   );
 }
 

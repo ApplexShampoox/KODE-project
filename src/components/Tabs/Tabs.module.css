@@ -17,5 +17,5 @@
   line-height: 20px;
   text-align: center;
   color: #97979b;
+  transition: color 0.3s ease-in-out;
 }
-

@@ -2,76 +2,44 @@ import style from './UserDetails.module.css'
 import { ReactComponent as GoBack } from '../../images/back.svg';
 import { ReactComponent as Star } from '../../images/star.svg';
 import { ReactComponent as Phone } from '../../images/phone.svg';
-
 import { useEffect, useState } from "react";
-import axios from 'axios';
 import moment from 'moment';
-const src = "https://stoplight.io/mocks/kode-frontend-team/koder-stoplight/86566464/users?__example=ios";
+import { useNavigate } from 'react-router-dom';
 
-const UserDetails = ({ name, nickname, specialty, birthday, phone }) => {
+const UserDetails = () => {
 
-  const [list, setList] = useState({});
+  const navigate = useNavigate();
+  const goBack = () => navigate(-1);
   const [userAge, setUserAge] = useState('');
+
   function getAge(year) {
-    let age = moment().diff(moment(year, 'YYYYMMDD'), 'years');
-    let age_ru = null;
-
-
-    switch (age.toString().slice(-1)) {
-      case '0':
-      case '5':
-      case '6':
-      case '7':
-      case '8':
-      case '9':
-        age_ru = age + ' лет'
-        break;
-
-      case '1':
-        age_ru = age + ' год'
-        break;
-
-      case 2:
-      case 3:
-      case 4:
-        age_ru = age + ' года'
-        break;
-      default:
-        age_ru = 'возраст неизвестен'
-    }
-    return age_ru
+    return moment().diff(moment(year, 'YYYYMMDD'), 'years');
   }
-
+  function pluralize(count, words) {
+    var cases = [2, 0, 1, 1, 1, 2];
+    return count + ' ' + words[(count % 100 > 4 && count % 100 < 20) ? 2 : cases[Math.min(count % 10, 5)]];
+  }
   useEffect(() => {
-
-    axios
-      .get(src)
-      .then(data => setList(data.data.items[0]))
-      .then(setUserAge(getAge(list.birthday)))
-  }, [list.birthday]);
-
-
+    setUserAge(pluralize(getAge(localStorage.birthday), ['год', 'года', 'лет']))
+  }, []);
 
   return (
     <>
       <div className={style.user_details_wrapper}>
-
         <div className={style.user_details_header_wrapper}>
-          <GoBack className={style.user_details_back_button} />
-          <img src={list.avatarUrl} alt="user" className={style.user_details_photo} />
-
+          <GoBack className={style.user_details_back_button} onClick={goBack} />
+          <img src={localStorage.avatarUrl} alt="user" className={style.user_details_photo} />
           <div className={style.user_details_name_wrapper}>
-            <span className={style.user_details_info_name} >{list.firstName + " " + list.lastName}</span>
-            <span className={style.user_details_info_nickname} >{list.userTag}</span>
+            <span className={style.user_details_info_name} >{localStorage.name}</span>
+            <span className={style.user_details_info_nickname} >{localStorage.userTag}</span>
           </div>
-          <span className={style.user_details_specialty} >{list.position}</span>
+          <span className={style.user_details_specialty} >{localStorage.position}</span>
         </div>
-
         <div className={style.user_details_birth}>
           <div className={style.user_details_birthdate_wrapper}>
             <Star className={style.user_details_star} />
             <span className={style.user_details_birthdate}>{
-              new Date(list.birthday).toLocaleString("ru", {
+              new Date(localStorage.birthday).toLocaleString("ru", {
                 month: 'long',
                 day: 'numeric',
                 year: 'numeric',
@@ -79,12 +47,11 @@ const UserDetails = ({ name, nickname, specialty, birthday, phone }) => {
               }).slice(0, -3)
             }</span>
           </div>
-
           <span className={style.user_details_age}>{userAge}</span>
         </div>
         <div className={style.user_details_phone_wrapper}>
           <Phone className={style.user_details_phone} />
-          <span className={style.user_details_phone_number}>{list.phone}</span>
+          <a href={'tel:' + localStorage.phone} className={style.user_details_phone_number}>{localStorage.phone}</a>
         </div>
       </div>
     </>
@@ -92,3 +59,4 @@ const UserDetails = ({ name, nickname, specialty, birthday, phone }) => {
 }
 
 export default UserDetails;
+

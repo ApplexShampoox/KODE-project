@@ -1,10 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Departments from "./components/Tabs/Departments";
+import UserDetails from "./components/UserDetails/UserDetails";
+
 
 function App() {
   return (
     <>
+
       <Routes>
         <Route path="/" element={<Layout />} >
           <Route index element={<Departments id={'all'} />} />
@@ -21,6 +24,7 @@ function App() {
           <Route path="qa" element={<Departments id={'qa'} />} />
           <Route path="support" element={<Departments id={'support'} />} />
         </Route>
+        <Route path="/:id" element={<UserDetails />} />
       </Routes>
     </>
   );
